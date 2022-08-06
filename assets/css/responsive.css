@@ -1,9 +1,5 @@
 /* Mobile & Tablet */
 @media (max-width: 1023px) {
-    :root{
-        --header-height: 68px;
-        --navbar-height: 0px;
-    }
     .hide-on-mobile-tablet {
         display: none;
     }
@@ -42,10 +38,20 @@
     .header__sort-bar{
         display: flex;
     }  
+    .app__content{
+        padding-top: 8px;
+    }
+    .mobile-category{
+        display: block;
+    }
 }
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+    :root{
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
     .hide-on-tablet {
         display: none;
     }
@@ -57,6 +63,10 @@
 
 /* Mobile */
 @media (max-width: 739px){
+    :root{
+        --header-height: 54px;
+        --navbar-height: 0px;
+    }
     .hide-on-mobile {
         display: none;
     }
@@ -64,8 +74,6 @@
         justify-content: space-between;
         padding: 0 12px;
     }
-    
-
     .header__category{
         display: block;
     }
@@ -83,6 +91,9 @@
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         animation: mobileSearchSideIn linear 0.3s;
     }
+    .header__mobile-search{
+        display: flex;
+    }
     .pagination-item{
         margin: 0;
     }
@@ -94,15 +105,38 @@
     .app__content{
         margin: 0 4px;
     }
-    @keyframes mobileSearchSideIn {
-        from{
-            opacity: 0;
-            top: calc(var(--header-height) / 2);
-        }
-        to{
-            opacity: 1;
-            top: var(--header-height);
-        }
+    .header__logo-img{
+        width: 110px;
+    }
+    .footer__content{
+        padding: 0 16px;
+    }
+    .footer__heading{
+        text-align: center;
+    }
+    .footer-item__link, .footer__download{
+        display: flex;
+        justify-content: center;
+    }
+    .footer__download-apps{
+        flex: unset;
+    }
+    .footer__download-qr{
+        width: 20%;
+    }
+    .footer__download-app-link{
+        display: block;
+        padding: 6px 8px;
     }
 }
 
+@keyframes mobileSearchSideIn {
+    from{
+        opacity: 0;
+        top: calc(var(--header-height) / 2);
+    }
+    to{
+        opacity: 1;
+        top: var(--header-height);
+    }
+}

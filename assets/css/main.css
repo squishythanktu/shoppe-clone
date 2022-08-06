@@ -399,6 +399,7 @@
 }
 .header__mobile-search{
     padding-left: 18px;
+    display: none;
 }
 .header__mobile-search-icon{
     font-size: 2.6rem;
@@ -481,6 +482,7 @@
 .header__logo{
     width: 200px;
     padding-left: 6px;
+    -webkit-tap-highlight-color: transparent;
 }
 .header__logo-link{
     text-decoration: none;
@@ -507,6 +509,7 @@
     width: 150px;
     text-align: center;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 .header__cart-wrap{
     position: relative;
@@ -835,6 +838,7 @@
     display: none;
 }
 .header__sort-item{
+    position: relative;
     flex: 1;
 }
 .header__sort-item:first-child .header__sort-link::before{
@@ -866,6 +870,12 @@
 }
 .header__sort-item--active .header__sort-link{
     color: var(--primary-color);
+}
+.header__sort-item--active::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-color);
 }
 /* App container */
 .app__container{
@@ -918,6 +928,58 @@
 .category-item__link:hover{
     right: -4px;
     color: var(--primary-color);
+}
+
+/* Mobile Category*/
+.mobile-category{
+    display: none;
+}
+.mobile-category__list{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+.mobile-category__list::-webkit-scrollbar{
+    display: none;
+}
+.mobile-category__item{
+    display: table;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.mobile-category__item:nth-of-type(3n+1) .mobile-category__link{
+    background-color: rgb(126, 166, 212);
+}
+.mobile-category__item:nth-of-type(3n+2) .mobile-category__link{
+    background-color: rgb(107, 194, 182);
+}
+.mobile-category__item:nth-of-type(3n+3) .mobile-category__link{
+    background-color: rgb(122, 201, 118);
+}
+
+.mobile-category__link{
+    --line-height: 2rem;
+    display: block; /*Có thẻ block mới set dc width*/
+    display: -webkit-box;
+    display: table-cell;
+    text-decoration: none;
+    color: var(--white-color);
+    line-height: var(--line-height);
+    height: calc(2 * var(--line-height));
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    vertical-align: middle;
+    width: 110px;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 /* Home sort + filter */
 .home-filter{
